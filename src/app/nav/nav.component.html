@@ -1,0 +1,63 @@
+
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="push" class="app-sidenav">
+    <mat-toolbar color="primary">
+      <!--future svg to go here-->
+      MENU
+      <span class="toolbar-filler"></span>
+      <button mat-icon-button (click)="sidenav.toggle()" class="mat-icon-button sidenav-toggle-button" [hidden]="!sidenav.opened">
+        <mat-icon aria-label="Menu" class="material-icons">close</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item class="sidenav-link" [routerLink]="['/word_cloud']" (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>assessment</mat-icon>
+        <span class="title" mat-line>word-cloud</span>
+        <span mat-line class="secondary">graph</span>
+      </a>
+      <a mat-list-item class="sidenav-link" [routerLink]="['/brushzoom']" (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>assessment</mat-icon>
+        <span class="title" mat-line>brush</span>
+        <span mat-line class="secondary">zooming</span>
+      </a>
+      <a mat-list-item class="sidenav-link" [routerLink]="['/condegram-spiral-plot']" (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>assessment</mat-icon>
+        <span class="title" mat-line>condegram-sprial-</span>
+        <span mat-line class="secondary">plot</span>
+      </a>
+      <a mat-list-item class="sidenav-link" [routerLink]="['/bar-chart']" (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>assessment</mat-icon>
+        <span class="title" mat-line>Bar-chart</span>
+        <span mat-line class="secondary">plot</span>
+      </a>
+      <a mat-list-item class="sidenav-link" [routerLink]="['/line-chart']" (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>assessment</mat-icon>
+        <span class="title" mat-line>Line-chart</span>
+        <span mat-line class="secondary">plot</span>
+      </a>
+      <a mat-list-item class="sidenav-link" [routerLink]="['/sunbrust']" (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>assessment</mat-icon>
+        <span class="title" mat-line>Sunbrust-chart</span>
+        <span mat-line class="secondary">plot</span>
+      </a>
+      <a mat-list-item class="sidenav-link" [routerLink]="['/chart']" (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>assessment</mat-icon>
+        <span class="title" mat-line>Chart-JS</span>
+        <span mat-line class="secondary">plot</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-toolbar id="appToolbar" color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()" class="mat-icon-button sidenav-toggle-button" [hidden]="sidenav.opened">
+                <mat-icon aria-label="Menu" class="material-icons">menu</mat-icon>
+        </button>
+    <h1 class="component-title">
+      <a class="title-link">GRAPHS GUI</a>
+    </h1>
+    <span class="toolbar-filler"></span>
+    <!--<button id="button-login" md-button [routerLink]="['/signupin']" *ngIf="!(user | async)">Log In</button>-->
+    <button id="button-logout" [routerLink]="['/']"  mat-button>HOME</button>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>
+

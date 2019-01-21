@@ -1,0 +1,42 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar>
+      <img src="../../assets/logo.png" width="200px" alt="Social Pie 2.0">
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#" style="font-weight:600;color:black(172, 172, 219)"><i class="material-icons" style="color:blue">play_for_work</i>Social Media Poster</a>
+      <a mat-list-item href="#" style="font-weight:600;color:black(172, 172, 219)"><i class="material-icons" style="color:blue">question_answer</i>Social Listening</a>
+      <a mat-list-item href="#" style="font-weight:600;color:black(172, 172, 219)"><i class="material-icons" style="color:blue">mic</i>VOC<i class="material-icons">arrow_drop_down</i></a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar style="color:#5982F8;background-color: white">
+      <button style="color:black"
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <button mat-button style="font-weight:bolder"><div class="container" fxFlex fxShow="true" fxLayout fxHide.sm="true" >Features</div></button>
+      <button mat-button style="font-weight:bolder">Prices</button>
+      <button mat-button style="font-weight:bolder">Help</button>
+      <button mat-button style="font-weight:bolder">News</button>
+      <button mat-button style="font-weight:bolder">Academy</button>
+      <button mat-button style="font-weight:bolder">Community</button>
+      <button mat-button [matMenuTriggerFor]="menu" style="font-weight:bolder">Company<i class="material-icons">
+        arrow_drop_down
+        </i></button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

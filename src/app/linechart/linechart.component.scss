@@ -1,0 +1,13 @@
+.line {
+  fill: none;
+  stroke: rgba(0,128,255,0.5);
+  stroke-width: 2px;
+}
+
+.area {
+  fill: rgba(0,128,255,0.2);
+}
+  
+.chart:hover .line {
+  stroke: rgba(0,128,255,1);
+}
